@@ -48,7 +48,7 @@ name: Deploy to Cloud Run from Source
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 env:
@@ -60,8 +60,8 @@ jobs:
   deploy:
     # Add 'id-token' with the intended permissions for workload identity federation
     permissions:
-      contents: 'read'
-      id-token: 'write'
+      contents: "read"
+      id-token: "write"
 
     runs-on: ubuntu-latest
     steps:
@@ -71,13 +71,13 @@ jobs:
       # NOTE: Alternative option - authentication via credentials json
       - name: Google Auth
         id: auth
-        uses: 'google-github-actions/auth@v0'
+        uses: "google-github-actions/auth@v1"
         with:
-          credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY }}'
+          credentials_json: "${{ secrets.SERVICE_ACCOUNT_KEY }}"
 
       - name: Deploy to Cloud Run
         id: deploy
-        uses: google-github-actions/deploy-cloudrun@v0
+        uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: ${{ env.SERVICE }}
           region: ${{ env.REGION }}
