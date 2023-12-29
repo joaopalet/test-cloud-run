@@ -14,5 +14,5 @@ func main() {
 
 func getTime(w http.ResponseWriter, r *http.Request) {
 	currentTime := time.Now().Format(time.RFC822)
-	fmt.Fprintf(w, "Time: %s", currentTime)
+	fmt.Fprintf(w, "%s", currentTime)
 }
