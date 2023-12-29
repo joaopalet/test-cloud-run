@@ -54,7 +54,7 @@ on:
 env:
   PROJECT_ID: teak-etching-409600
   SERVICE: test-app-backend
-  REGION: europe-southwest1
+  REGION: europe-west1
 
 jobs:
   deploy:
