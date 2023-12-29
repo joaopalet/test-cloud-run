@@ -49,6 +49,7 @@ name: Deploy to Cloud Run from Source
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 env:
   PROJECT_ID: teak-etching-409600
